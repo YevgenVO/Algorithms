@@ -2,25 +2,25 @@ package gmail.yevgenij.v.o.containerWithMostWater;
 
 public class ContainerWithMostWater {
     public int maxArea(int[] height) {
-        int var;
+        int tempHeight;
         int i = 0;
         int j = height.length - 1;
-        int area = 0;
-        for(;j > i;) {
+        int conteinerArea = 0;
+        while (j > i) {
             if(height[i] > height[j]) {
-                var = height [j];
-                if(area < var * (j - i)){
-                    area = var * (j - i);
+                tempHeight = height [j];
+                if(conteinerArea < tempHeight * (j - i)){
+                    conteinerArea = tempHeight * (j - i);
                 }
                 j--;
             }else{
-                var = height [i];
-                if(area < var * (j - i)){
-                    area = var * (j - i);
+                tempHeight = height [i];
+                if(conteinerArea < tempHeight * (j - i)){
+                    conteinerArea = tempHeight * (j - i);
                 }
                 i++;
             }
         }
-        return area;
+        return conteinerArea;
     }
 }
