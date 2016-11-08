@@ -12,9 +12,9 @@ public class AddTwoNumbers {
         lFirst = lFirst.getNext();
         while (lFirst != null) {
             lSecond = lSecond.getNext();
+            plus = (lFirst.getNum() + lSecond.getNum() + plus) / 10;
             lThird.setNext(new ListNode((lFirst.getNum() + lSecond.getNum() + plus) % 10));
             lThird = lThird.getNext();
-            plus = (lFirst.getNum() + lSecond.getNum() + plus) / 10;
             lFirst = lFirst.getNext();
         }
         return l3;
