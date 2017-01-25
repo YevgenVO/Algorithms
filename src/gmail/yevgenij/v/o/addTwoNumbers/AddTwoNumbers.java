@@ -2,20 +2,16 @@ package gmail.yevgenij.v.o.addTwoNumbers;
 
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode lFirst = l1;
-        ListNode lSecond = l2;
         ListNode lThird;
         ListNode l3;
         int plus = 0;
-        lThird = new ListNode((lFirst.getNum() + lSecond.getNum() + plus) % 10);
+        lThird = new ListNode((l1.getNum() + l2.getNum() + plus) % 10);
         l3 = lThird;
-        lFirst = lFirst.getNext();
-        while (lFirst != null) {
-            lSecond = lSecond.getNext();
-            plus = (lFirst.getNum() + lSecond.getNum() + plus) / 10;
-            lThird.setNext(new ListNode((lFirst.getNum() + lSecond.getNum() + plus) % 10));
+        for (l1 = l1.getNext(); l1 != null; l1 = l1.getNext()) {
+            l2 = l2.getNext();
+            lThird.setNext(new ListNode((l1.getNum() + l2.getNum() + plus) % 10));
             lThird = lThird.getNext();
-            lFirst = lFirst.getNext();
+            plus = (l1.getNum() + l2.getNum() + plus) / 10;
         }
         return l3;
     }

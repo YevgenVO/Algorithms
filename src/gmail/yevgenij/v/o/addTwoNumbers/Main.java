@@ -2,19 +2,20 @@ package gmail.yevgenij.v.o.addTwoNumbers;
 
 
 public class Main {
-    private static ListNode listNodeFirst;
-    private static ListNode listNodeSecond;
-    private static ListNode listNodeThird;
+    private ListNode listNodeFirst;
+    private ListNode listNodeSecond;
+    private ListNode listNodeThird;
 
     public static void main(String[] args) {
-        listNodeFirst = new ListNode(5);
-        listNodeFirst.setNext(new ListNode(9));
-        listNodeFirst.getNext().setNext(new ListNode(9));
-        listNodeSecond = new ListNode(9);
-        listNodeSecond.setNext(new ListNode(9));
-        listNodeSecond.getNext().setNext(new ListNode(9));
+        Main a = new Main();
+        a.listNodeFirst = new ListNode(5);
+        a.listNodeFirst.setNext(new ListNode(9));
+        a.listNodeFirst.getNext().setNext(new ListNode(9));
+        a.listNodeSecond = new ListNode(9);
+        a.listNodeSecond.setNext(new ListNode(9));
+        a.listNodeSecond.getNext().setNext(new ListNode(9));
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
-        listNodeThird = addTwoNumbers.addTwoNumbers(listNodeFirst, listNodeSecond);
-        System.out.println(listNodeThird.getNum() + " -> " + listNodeThird.getNext().getNum() + " -> " + listNodeThird.getNext().getNext().getNum());
+        a.listNodeThird = addTwoNumbers.addTwoNumbers(a.listNodeFirst, a.listNodeSecond);
+        System.out.println(a.listNodeThird.getNum() + " -> " + a.listNodeThird.getNext().getNum() + " -> " + a.listNodeThird.getNext().getNext().getNum());
     }
 }

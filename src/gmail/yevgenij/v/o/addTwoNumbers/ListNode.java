@@ -3,7 +3,7 @@ package gmail.yevgenij.v.o.addTwoNumbers;
 public class ListNode {
     private int num;
     private ListNode next;
-    ListNode(int num){
+    public ListNode(int num){
         this.num = num;
     }
 
